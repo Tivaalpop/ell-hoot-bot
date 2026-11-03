@@ -32,13 +32,13 @@ LOGS_DIR = Path(os.environ.get("LOGS_DIR", BASE_DIR / "logs"))
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "9102765208:AAEZ93JTRbbpMHVIuAISgbwrCHKUX0u_4Kw").strip()
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "").strip()
 if not BOT_TOKEN:
     print("❌ BOT_TOKEN مطلوب في environment variables", file=sys.stderr)
     sys.exit(1)
 
 try:
-    ADMIN_ID = int(os.environ.get("ADMIN_ID", "1444139300"))
+    ADMIN_ID = int(os.environ.get("ADMIN_ID", ""))
 except ValueError:
     print("❌ ADMIN_ID غير صالح", file=sys.stderr)
     sys.exit(1)
